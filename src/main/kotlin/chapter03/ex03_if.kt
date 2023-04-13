@@ -4,6 +4,14 @@ fun main(args: Array<String>) {
     val name = "얀조"
     var healthPoints = 89
     var isBlessed = true
+    val isImmortal = false
+
+    // 아우라=======
+    var auraVisible = isBlessed && healthPoints > 50 || isImmortal
+
+    if (auraVisible) println("GREEN")
+    else println("NONE")
+    // ============
 
     if (healthPoints == 100) {
         println(name + "최상의 상태 . . ")
