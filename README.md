@@ -48,7 +48,7 @@
    - *[함수를 인자로 받는 함수 정의(ex05_exercise01.kt)](./src/main/kotlin/chapter05/ex05_exercise01.kt)*
      - `익명함수` 를 둘러싼 괄호를 지울 수 있다. 
      - 앞의 인자만 괄호를 씌우고 **단축 문법** 사용
-   - *[기존함수를 인자로 받는 함수(ex05_exercise02.kt)](./src/main/kotlin/chapter05/ex05_exercise02.kt)
+   - *[기존함수를 인자로 받는 함수(ex05_exercise02.kt)](./src/main/kotlin/chapter05/ex05_exercise02.kt)*
      - 기존함수 참조는 `::` 를 붙여주어야 한다.
 6. ### [null 안전과 예외](./src/main/kotlin/chapter06)
     - Kotlin 에서는 `null` 의 사용여부를 **설정** 할 수 있다.
@@ -134,5 +134,26 @@
     map["key"]?.capitalize() // 오류 없음
     ```
     - `[]`은 **null** 을 반환할 수 있기 때문에 . .
-11. ### [클래스()]()
-    - 
+11. ### [클래스](./src/main/kotlin/chapter11)
+    - `부모 클래스`를 정의하지 않으면 **자동으로** `Any`가 부모클래스가 된다.
+    - 코틀린의 **클래스** 변수는 **public** 이 디폴트
+    - *[ex11_class.kt](src/main/kotlin/chapter11/ex11_class.kt)*
+      - 클래스 내부 변수가 `var` 이고 , 클래스 인스턴스는 `val` 일 경우 내부변수 수정이 **가능**하다.
+        - 참조하고있는 `val` 변수는 변하지 않기 때문
+      - 필드에 대한 `getter`, `setter` 는 자동으로 생성된다.
+        - 이후 **재정의** 가 가능
+        - **재정의** 시 변수 선언 바로 **다음** 에 해야 적용된다.
+    - *[ex11_get_property.kt](src/main/kotlin/chapter11/ex11_get_property.kt)*
+      - `val` 변수는 `setter`에 의해서도 변경이 되지 않는다.
+        - **산출속성** 을 통해 자신의 값을 산출해낸다.
+        - 값을 저장할 필요가 없기 때문에 `setter`에 의한 에러가 나지 않는다.
+    - **클래스** 관례 
+      - **클래스** 하나당 `파일`한개
+      - 함수명도 **클래스명**과 통일
+      - *[ex11_class.kt](src/main/kotlin/chapter11/ex11_class.kt)* 의 `Player` ▷ *[Player.kt](src/main/kotlin/chapter11/Player.kt)* 와 같이 운영
+      - *[ex11_get_property.kt](src/main/kotlin/chapter11/ex11_get_property.kt)* ▷ *[Dice.kt](src/main/kotlin/chapter11/Dice.kt)* 와 같이 운영
+      - 동일 패키지에 **클래스 파일** 이 존재하면 `kt`파일에서 그냥 접근 가능
+      - 다른 패키지인 경우 `import` 해야 접근 가능
+12. ### [클래스 초기화](./src/main/kotlin/chapter12)
+    - 생성자 내에서 `var` 혹은 `val`를 쓰면 **멤버변수** 로 정의하겠다는 것을 의미
+    - 코틀린의 **기본생성자** 는 한벌만 가진다. → `오버로드`가 안된다.
