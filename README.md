@@ -120,4 +120,19 @@
      - `.forEach{람다}` 로도 **loop** 처리가 가능하다.
      - `.forEachIndexed` 를 이용하여 **인덱스** 접근이 가능하다.
    - `Set` 의 경우 `List` 와 사용방법 동일 → **중복불가** 인 점만 다르다 . .
-10. ### []()
+10. ### [Map](./src/main/kotlin/chapter10)
+    - **python** 의 `Dictionary`와 유사
+      - **python** 에서 key 의 type 은 **String** 이었는데, 코틀린은 제한 없다.
+    - `key to value` 혹은 `Pair(key, value)` 형식으로 인수 생성
+    -  `map` 은 읽기 전용이므로 `+=` 등 연산자 **사용 불가**
+      - `mutablemap` 이어야 **사용 가능**
+    - **참조**는 바꿀 수 없으나, **내용** 은 바꿀 수 있다.
+    - `[]`을 통해 **인덱스** 접근시 다음과 같이 사용하면 **문법적 오류** 발생
+    
+    ```kt
+    map["key"].capitalize() //오류 발생
+    map["key"]?.capitalize() // 오류 없음
+    ```
+    - `[]`은 **null** 을 반환할 수 있기 때문에 . .
+11. ### [클래스()]()
+    - 
