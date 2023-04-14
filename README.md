@@ -99,4 +99,25 @@
        - 수신객체? 마지막 한 문장?
    - `let` : **수신객체** 는 `it` 즉 매개변수로 넘어가게 된다.
      - 리턴값은 마지막 한 문장이 된다.(즉 **람다의 리턴**)
-   - 
+9. ### [List와 Set](./src/main/kotlin/chapter09)
+   - 코틀린의 **Collection** 은 읽기전용, 쓰기가능 으로 나뉨 : 모든 콜렉션에 적용
+     - `읽기 전용` : List, Set, Map
+     - `쓰기 가능` : Mutable List/Set/Map
+   - **Collection** 은 직접 생성자를 만들 수 없다. → `생성 함수`를 사용해야한다.
+   - *[ex09_list.kt](./src/main/kotlin/chapter09/ex09_list.kt)*
+     - `List` 사용
+       - `getOrElse(index)[람다]` : **index** 가 유효하지 않으면 **람다함수** 실행
+       - `getOrNull(index)` : **index** 가 유효하지 않으면 `null` 리턴
+       - `contains(값) / containsAll(List)` : 특정 요소가 있는지 검사
+     - `MutableList` 사용
+       - **동일패키지** 내에서 동일한 이름의 **전역변수** 를 사용할 수 없다.
+         - 쓰고 싶다면 `private`로 선언하자.
+       - `MutableList`는 **쓰기** 가 가능하다.
+         - `remove`, `removaAt(index)`, `add`, `insert(add(index, things))` 를 쓸 수 있다.
+         - add, remove 보다는 실제로는 `+=`, `-=`, `addAll` 등을 더 많이 쓴다.
+   - *[ex09_loop.kt](./src/main/kotlin/chapter09/ex09_loop.kt)*
+     - **반복(loop)** 처리
+     - `.forEach{람다}` 로도 **loop** 처리가 가능하다.
+     - `.forEachIndexed` 를 이용하여 **인덱스** 접근이 가능하다.
+   - `Set` 의 경우 `List` 와 사용방법 동일 → **중복불가** 인 점만 다르다 . .
+10. ### []()
