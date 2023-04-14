@@ -67,3 +67,24 @@
         }
         ``` 
       - 위와 같이 구현하면 `Error` ,, `test?.capitalize()` 와 같이 작성해야한다.
+7. ### [문자열](./src/main/kotlin/chapter07)
+   - *[ex07_substring.kt](./src/main/kotlin/chapter07/ex07_substring.kt)*
+     - `부분 문자열` 추출
+     - `substring` : 정해진 인덱스 범위 내의 부분 문자열 추출
+     - `until` : `until` 양 옆의 인자로 범위 생성(**상한값**은 포함되지 않는다.)
+   - *[ex07_split.kt](./src/main/kotlin/chapter07/ex07_split.kt)*
+     - `문자열`을 특정 **문자**로 split
+     - 또한 `해체 선언` 을 통해 **python**의 `unpack`과 같은 기능을 할 수 있다.
+   - *[ex07_replace.kt](./src/main/kotlin/chapter07/ex07_replace.kt)*
+     - 특정 **문자** 를 다른 문자로 **대체**
+     - 현재 코드에서는 `when절`이 포함된 **람다함수** 가 `replace`의 인자로 들어가 있다.
+   - `==` 는 문자열 **내용**이 동일한지의 여부 검사
+   - `===` 는 **참조값**이 일치하는 지의 검사
+   
+    ```kt
+   val a = 30
+   val b = 30
+   
+   println(a==b, a===b) // true, false
+   ```
+8. *[]()*
