@@ -173,4 +173,10 @@
       - `open fun` : 오버라이드 허용
     - *[Room.kt](./src/main/kotlin/chapter13/Room.kt)*
       - **class** 와 특정 **fun** 에 `open`을 사용하여 상속 및 오버라이드 허용
-    - 
+    - *[TownSquare.kt](./src/main/kotlin/chapter13/TownSquare.kt)*
+      - `class TownSquare : Room("Town Square")` 와 같이 상속 받을 수 있다.
+      - `override` 를 이용하여 **오버라이드** 할 함수 호출
+    - **private**, **protected** 등을 통해 가시성을 정의
+    - `final` 을 통해 이후 상속시 더이상 **오버라이드** 할 수 없도록 막음
+    - **부모** 객체와 **자식** 객체가 중복된 함수를 사용시, 다운스케어 하여 사용 가능
+      - 다형성
