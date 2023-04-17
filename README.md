@@ -154,6 +154,23 @@
       - *[ex11_get_property.kt](src/main/kotlin/chapter11/ex11_get_property.kt)* ▷ *[Dice.kt](src/main/kotlin/chapter11/Dice.kt)* 와 같이 운영
       - 동일 패키지에 **클래스 파일** 이 존재하면 `kt`파일에서 그냥 접근 가능
       - 다른 패키지인 경우 `import` 해야 접근 가능
-12. ### [클래스 초기화](./src/main/kotlin/chapter12)
-    - 생성자 내에서 `var` 혹은 `val`를 쓰면 **멤버변수** 로 정의하겠다는 것을 의미
+12. ### [클래스 초기화](./src/main/kotlin/chapter12) - 생성자 내에서 `var` 혹은 `val`를 쓰면 **멤버변수** 로 정의하겠다는 것을 의미
     - 코틀린의 **기본생성자** 는 한벌만 가진다. → `오버로드`가 안된다.
+    - `constructor` 를 통해 생성자에 대한 **오버로딩** 이 가능하다.
+      - `this`로 다른 생성자를 호출할 수 있다.
+    - `init` 을 통해 **초기화** 를 할 수 있다.
+      - `require` 을 이용하여 속성값의 검사 및 설정 
+      - `require` 의 첫번째 인자 값이 **false** 이면 두번째 인자인 **람다함수** 실행
+    - `init` 은 **주생성자** 실행 이후 바로 실행
+    - `constructor` 는 **주생성자**가 실행되지 않으면 실행 안된다.
+    - 모든 멤버 변수는 **초기화** 되어야 한다.
+    - Q. 하지만 처음에 값을 할당해 줄 수 없는 경우는 ?
+      - `lateinit` 을 **클래스** 에서 사용 : 개발자의 책임이 따른다.
+      - 혹은 `by lazy {람다}` 을 이용하여 **최초 사용**될 때 까지 초기화 연기
+13. ### [상속](./src/main/kotlin/chapter13)
+    - `open` 키워드를 쓰면 다른 클래스나 메소드에서 ***상속받을 수** 있도록 허용
+      - `open class` : 상속 허용
+      - `open fun` : 오버라이드 허용
+    - *[Room.kt](./src/main/kotlin/chapter13/Room.kt)*
+      - **class** 와 특정 **fun** 에 `open`을 사용하여 상속 및 오버라이드 허용
+    - 
