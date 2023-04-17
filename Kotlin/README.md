@@ -1,4 +1,4 @@
-## AndroidProgramming🚕
+## AndroidProgramming _ Kotlin🚕
 
 1. ### [Kotlin사용해보기(./src/main/kotlin/chapter01)](./src/main/kotlin/chapter01)
     - `함수`를 구현하여 **출력** 해보기
