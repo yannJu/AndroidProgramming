@@ -24,5 +24,5 @@
 2. ### [Calculator](./Calculator)
 	- **1** 을 이용하여 계산기 만들기
 
-	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/Screenshot_20230418-135017_Calculator.jpg) || ![](https://github.com/yannJu/AndroidProgramming/blob/master/img/Screenshot_20230418-134559_Calculator.jpg)
+	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/Screenshot_20230418-134559_Calculator.jpg)|![](https://github.com/yannJu/AndroidProgramming/blob/master/img/Screenshot_20230418-135017_Calculator.jpg)
 	---
