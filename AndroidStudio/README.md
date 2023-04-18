@@ -20,3 +20,9 @@
 		- `findViewById<TextView>()` 를 이용하여 `View` 컴포넌트를 가져온다.
 		- 요즘은 `findViewById`로 뷰 참조 획득의 대안으로 **뷰 바인딩** 이 권장사항
 	- `View` 컴포넌트를 이용하여 **이벤트 핸들링**
+	- `LogCat` 사용
+2. ### [Calculator](./Calculator)
+	- **1** 을 이용하여 계산기 만들기
+
+	![](../img/) || ![]()
+	---
