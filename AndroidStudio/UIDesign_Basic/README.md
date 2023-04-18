@@ -44,9 +44,7 @@
 3. ### [Edit Text 활용(EditTextActivity.kt)](./app/src/main/java/com/example/uidesign_basic/EditTextActivity.kt)
     - *[AndroidManifest.xml](./app/src/main/AndroidManifest.xml)* 를 통해 **Main Activity** 를 *[EditTextActivity.Kt](./app/src/main/java/com/example/uidesign_basic/EditTextActivity.kt)* 로 수정하여 실행한다.
         - 더불어 *[edit_text.xml](./app/src/main/res/layout/edit_text.xml)* 에 *[EditTextActivity.Kt](./app/src/main/java/com/example/uidesign_basic/EditTextActivity.kt)* 로 수정한다.
-    - 구성화면은 다음과 같이 **로그인** 화면을 구성하였다.
-
-        ![]()
+    - 구성화면은 **로그인** 화면을 구성하였다.
     - 이름을 입력하는 `inputName` 에 **setOnFocusChangeListener** 동작시켜 포커스를 얻었는지의 여부를 확인한다.
         - `hasFocus`가 **true** 인경우 포커스가 발생한 이벤트에 대한 처리를 진행한다.
     - `addTextChangedListener()` : `Text`가 변경되는 것을 확인하는 `Listener`
@@ -59,5 +57,5 @@
         - `Log.d([로그내용])` 으로 작성.
     - `LogCat` 에서 자신이 작성한 로그 혹은 특정 로그를 볼 때 **필터링** 해서 볼 수 있다.
 
-    ![](.../img/a2_img.PNG)
+        ![](.../img/a2_img.PNG)
     - `Tag` 라는 문자열을 씀으로써 반복된 문자 사용 줄이기 → 주로 `Tag`로 쓰는 문자열은 **클래스** 명을 쓴다.
