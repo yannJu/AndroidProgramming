@@ -7,6 +7,7 @@ import com.example.uidesign_basic.databinding.LogcatBinding
 import java.lang.Exception
 
 class LogCatActivity : AppCompatActivity() {
+    val TAG = "LogCatActivity"
     var nCount :Int = 0
     var maxCount :Int = 10
     val binding by lazy {LogcatBinding.inflate(layoutInflater)}
@@ -16,12 +17,12 @@ class LogCatActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLogCat.setOnClickListener {
-            Log.d(javaClass.name, "${++nCount} Clicked . . ")
+            Log.d(TAG, "${++nCount} Clicked . . ")
             try {
                 val nResult = maxCount / (maxCount - nCount)
-                Log.d("My Log", "nMaxCount / (nMaxCount - nCount) is ${nResult} !")
+                Log.d(TAG, "nMaxCount / (nMaxCount - nCount) is ${nResult} !")
             }catch (e : Exception) {
-                Log.d("My Err Log", "${nCount} : ${e.toString()}")
+                Log.d(TAG, "${nCount} : ${e.toString()}")
             }
         }
     }
