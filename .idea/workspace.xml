@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48d1841f-73f0-4361-a81d-5122d803eea3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../2020_AndroidTeamProject" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../AndroidProgramming/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../AndroidProgramming/.idea/workspace.xml" beforeDir="false" />
@@ -33,7 +32,6 @@
       <change beforePath="$PROJECT_DIR$/../CapstoneRepo" beforeDir="false" afterPath="$PROJECT_DIR$/../CapstoneRepo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ComputerNetwork" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Cpp_AlgorithmLab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../SnakeGameProj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Study__Web" beforeDir="false" afterPath="$PROJECT_DIR$/../Study__Web" afterDir="false" />
@@ -76,7 +74,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AndroidStudio" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -179,13 +177,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="254" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1681706117009">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="254" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/62.0.1474.864@62.0.1474.864" timestamp="1681706117009" />
     <state x="803" y="234" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1681705139199">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
     <state x="803" y="234" key="#com.intellij.fileTypes.FileTypeChooser/62.0.1474.864@62.0.1474.864" timestamp="1681705139199" />
-    <state x="293" y="0" key="SettingsEditor" timestamp="1681705357847">
+    <state x="425" y="257" key="FileChooserDialogImpl" timestamp="1681706272673">
       <screen x="62" y="0" width="1474" height="864" />
     </state>
-    <state x="293" y="0" key="SettingsEditor/62.0.1474.864@62.0.1474.864" timestamp="1681705357847" />
+    <state x="425" y="257" key="FileChooserDialogImpl/62.0.1474.864@62.0.1474.864" timestamp="1681706272673" />
+    <state x="293" y="0" key="SettingsEditor" timestamp="1681705792164">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="293" y="0" key="SettingsEditor/62.0.1474.864@62.0.1474.864" timestamp="1681705792164" />
+    <state x="155" y="93" width="1288" height="678" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1681705952266">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="155" y="93" width="1288" height="678" key="com.android.tools.idea.avdmanager.AvdListDialog/62.0.1474.864@62.0.1474.864" timestamp="1681705952266" />
+    <state x="753" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1681706176023">
+      <screen x="62" y="0" width="1474" height="864" />
+    </state>
+    <state x="753" y="256" key="com.intellij.ide.util.TipDialog/62.0.1474.864@62.0.1474.864" timestamp="1681706176023" />
   </component>
 </project>
