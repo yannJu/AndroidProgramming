@@ -14,8 +14,27 @@ class MainActivity : AppCompatActivity() {
     companion object {
         val HEIGHT = "height"
         val WEIGHT = "weight"
+        val BMI = "BMI"
+
         val KEY_HEIGHT = "KEY_HEIGHT"
         val KEY_WEIGHT = "KEY_WEIGHT"
+        val KEY_BMI = "KEY_BMI"
+
+        val REQUEST = 1
+        val RESULT = "RESULT"
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode != REQUEST) return
+
+        Log.d("Result", data.toString())
+
+        data?.getStringExtra(RESULT).let {
+            binding.txtBmi.text = it
+            it?.toFloat()?.let { it1 -> saveData(it1) }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                     putExtra(HEIGHT, height.toFloat())
                     putExtra(WEIGHT, weight.toFloat())
                 }
-                startActivity(intent)
+                startActivityForResult(intent, REQUEST)
             }
             else {
                 var toast = Toast.makeText(application,
@@ -55,14 +74,24 @@ class MainActivity : AppCompatActivity() {
             .apply()
     }
 
+    fun saveData(bmi: Float) {
+        val pref = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor = pref.edit()
+
+        editor.putFloat(KEY_BMI, bmi)
+            .apply()
+    }
+
     fun loadData() {
         val pref = PreferenceManager.getDefaultSharedPreferences(this)
         val height = pref.getFloat(KEY_HEIGHT, 0f)
         val weight = pref.getFloat(KEY_WEIGHT, 0f)
+        val bmi = pref.getFloat(KEY_BMI, 0f)
 
-        if (height != 0f && weight != 0f) {
+        if (height != 0f && weight != 0f && bmi != 0f) {
             binding.txtHeight.setText(height.toString())
             binding.txtWeight.setText(weight.toString())
+            binding.txtBmi.text = bmi.toString()
         }
     }
 }

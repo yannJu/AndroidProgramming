@@ -1,5 +1,6 @@
 package com.example.bmicalculator
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -38,5 +39,13 @@ class ResultActivity : AppCompatActivity() {
         }
 
         Toast.makeText(this, "BMI : $bmi", Toast.LENGTH_SHORT).show()
+
+        binding.btnReturn.setOnClickListener {
+            val i = Intent()
+
+            i.putExtra(MainActivity.RESULT, bmi)
+            setResult(RESULT_OK, i)
+            finish()
+        }
     }
 }
