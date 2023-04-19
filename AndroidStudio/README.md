@@ -25,7 +25,7 @@
 	- **1** 을 이용하여 계산기 만들기
 
 	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/Screenshot_20230418-134559_Calculator.jpg)|![](https://github.com/yannJu/AndroidProgramming/blob/master/img/Screenshot_20230418-135017_Calculator.jpg)
-	---
+	--- | --- |
 3. ### [Activity](./Activity)
 	- `Activity` 의 **Life Cycle** 확인
 	- `Main Activity` 에서 다른 액티비티로 전환
@@ -34,3 +34,6 @@
 4. ### [Toast](./Toast)
 	- 알림창을 띄우는 기능
 	- `Activity` 를 커스텀하여 **Toast** 로 띄울 수 있다.
+5. ### [비만도계산기](./BmiCalculator)
+	- **키** 와 **몸무게** 를 입력받아 비만도를 계산
+	- 비만도에 적절하게 이미지를 변경하여 출력
