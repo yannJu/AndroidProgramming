@@ -16,7 +16,7 @@ class ResultActivity : AppCompatActivity() {
         val height = intent.getFloatExtra(MainActivity.HEIGHT, 0f)
         val weight = intent.getFloatExtra(MainActivity.WEIGHT, 0f)
 
-        Toast.makeText(this, "키 : ${height}, 몸무게 : ${weight}", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "키 : ${height}, 몸무게 : ${weight}", Toast.LENGTH_SHORT).show()
 
         // 비만도 계산
         val bmi = weight / (height / 100.0f).pow(2.0f)
@@ -36,5 +36,7 @@ class ResultActivity : AppCompatActivity() {
             bmi >= 18.5 -> binding.imageView.setImageResource(R.drawable.good)
             else -> binding.imageView.setImageResource(R.drawable.soso)
         }
+
+        Toast.makeText(this, "BMI : $bmi", Toast.LENGTH_SHORT).show()
     }
 }
