@@ -68,6 +68,8 @@ class MainActivity : AppCompatActivity() {
 
         // 다른 Activity로 이동하고 값 반환 받기
         binding.btnLogin.setOnClickListener {
+            binding.txtResult.text = ""
+
             val i = Intent(this, MainActivity3::class.java)
             i.putExtra(ID, binding.txtName.text.toString())
             i.putExtra(PASSWD, binding.txtPwd.text.toString())

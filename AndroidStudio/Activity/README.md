@@ -62,3 +62,6 @@
     - `MainActivity`가 아니기 때문에 클래스 명 전체를 작성해 주어야 한다.
     - `setResult` 는 이번 Activity의 **result** 값을 설정하고, 복귀값을 지정하는 것 뿐이다. ▶ 바로 복귀하는 것은 아니다. **resultActivity** 가 닫힐때 복귀
         - `setResult`의 두번째 인자가 `MainActivity`의 **data** 에 대한 **result** 이다.
+    - +) 추가
+        - `onStart` 에서 `setResult` 해주던 부분을 **버튼 클릭시** 로 변경
+        - 따라서 `OK` 버튼을 클릭했을 때에 **Result_OK** 에 의해 복귀하도록 . . → `Cancel` 버튼시에는 **setResult** 가 없으므로 돌아오면 빈 값

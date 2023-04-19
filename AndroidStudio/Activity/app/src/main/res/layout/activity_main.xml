@@ -49,16 +49,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:ems="10"
-        android:inputType="text"
-        android:hint="User ID를 입력하세요 , , "/>
+        android:hint="User ID를 입력하세요 , , "
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/txtPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPassword"
-        android:hint="비밀번호를 입력하세요 , , "/>
+        android:hint="비밀번호를 입력하세요 , , "
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -71,5 +71,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
-        android:text=""/>
+        android:text="" />
 </LinearLayout>

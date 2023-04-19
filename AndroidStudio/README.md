@@ -26,8 +26,10 @@
 
 	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/Screenshot_20230418-134559_Calculator.jpg)|![](https://github.com/yannJu/AndroidProgramming/blob/master/img/Screenshot_20230418-135017_Calculator.jpg)
 	---
-3. ###[Activity](./Activity)
+3. ### [Activity](./Activity)
 	- `Activity` 의 **Life Cycle** 확인
 	- `Main Activity` 에서 다른 액티비티로 전환
 	- 다른 액티비티에 **intent** 를 보내고 값을 반환받을 수 있다.
 	- 여러개의 액티비티 운영
+4. ### [Toast](./Toast)
+	- 알림창을 띄우는 기능
