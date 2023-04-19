@@ -1,13 +1,17 @@
 ## Android Programming _ Activity 🌺
 
 ### 구조 정리
+
 *[LifeCycleActivity.kt](./app/src/main/java/com/example/activity/LifeCycleActivity.kt)* & *[life_cycle_activity_main.xml](./app/src/main/res/layout/life_cycle_activity_main.xml)*
     → `Android Life Cycle` 를 확인하기 위해 각종 **override** 확인 가능
+
 *[MainActivity.kt](./app/src/main/java/com/example/activity/MainActivity.kt)* & *[activity_main.xml](./app/src/main/res/layout/activity_main.xml)*
     → `Intent` 실습 : Uri 예제 (메시지, 인터넷, Map, Market . .)
     → 다른 `Activity`로 전환하는 예제의 Main (암시적/명시적호출)
+
 *[MainActivity2.kt](./app/src/main/java/com/example/activity/MainActivity2.kt)* & *[activity_main2.xml](./app/src/main/res/layout/activity_main2.xml)*
     → *[MainActivity.kt](./app/src/main/java/com/example/activity/MainActivity.kt)* 에서 `Intent`를 넘겨주는 실습 진행
+
 *[MainActivity3.kt](./app/src/main/java/com/example/activity/MainActivity3.kt)* & *[activity_main3.xml](./app/src/main/res/layout/activity_main3.xml)*
     → *[MainActivity.kt](./app/src/main/java/com/example/activity/MainActivity.kt)* 에서 `Intent`를 넘겨주는 실습 진행 및 값 반환 . .
 ---
