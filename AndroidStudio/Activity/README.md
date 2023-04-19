@@ -14,6 +14,7 @@
 
 *[MainActivity3.kt](./app/src/main/java/com/example/activity/MainActivity3.kt)* & *[activity_main3.xml](./app/src/main/res/layout/activity_main3.xml)*
     → *[MainActivity.kt](./app/src/main/java/com/example/activity/MainActivity.kt)* 에서 `Intent`를 넘겨주는 실습 진행 및 값 반환 . .
+
 ---
 0. ### Activity
     - 화면 하나를 관리하는 요소
