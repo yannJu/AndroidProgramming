@@ -41,4 +41,4 @@
         - 안드로이드 기기의 파일시스템 확인 가능
         - data > data > com.example.[프로젝트명] > shared_prefs 에 `xml` 파일로 저장되어있다.
 
-        ![]()
+        ![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a3_img.PNG)
