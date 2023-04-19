@@ -10,4 +10,18 @@ class MainActivity3 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
     }
+
+    override fun onStart() {
+        super.onStart()
+
+        var i = intent?:return
+
+        val sID = i.getStringExtra(MainActivity.ID)
+        val sPassWd = i.getStringExtra(MainActivity.PASSWD)
+
+        binding.txtReturn.text = "아이디 : ${sID}\n패스워드 : ${sPassWd}"
+        i.putExtra(MainActivity.RESULT, binding.txtReturn.text.toString())
+
+        setResult(MainActivity.REQUEST, i)
+    }
 }

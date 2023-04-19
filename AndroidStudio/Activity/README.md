@@ -46,7 +46,7 @@
     -`intent` 의 수신자를 지정하지 않고 **행위** 만 지정 ▶ 암시적 인텐트 호출
         - 누가 이 `intent`를 받을지에 대한 선택은 안드로이드가 지정
     - 수신자를 지정하여 호출 ▶ 명시적 인텐트 호출
-4. ### [명시적 인텐트 호출(MainActivity1.kt & MainActivity3.kt)](./app/src/main/java/com/example/activity/MainActivity.kt)
+4. ### [명시적 인텐트 호출(MainActivity1.kt)](./app/src/main/java/com/example/activity/MainActivity.kt)
     - 여러개의 Activity를 가질때 직접 다른 `Activity`로 Intent를 넘겨준다.
     - `Intent(this, [가고자하는 Activity]::class.java)` 를 이용하여 `this` 호출자가 Activity를 직접 호출
     - 값을 전달 하고 반환 받아보자 . .
@@ -56,3 +56,9 @@
         - 이때 **requestNum** 은 개발자가 직접 정하는 것 !
     - `onActivityResult` 를 통해 requestCode, resultCode, data 를 받아오고 이때 **data** 는 `Null`을 허용한다.
         - 따라서 `let`을 통해, **data**가 Null 이 아니면 `txtResult`에 **data**를 대입해준다.
+5. ### [명시적 인텐트 호출에 대한 result(MainActivity3.kt)](./app/src/main/java/com/example/activity/MainActivity3.kt)
+    - 반환을 위해 `onStart` 상태일 때, 값을 리턴하도록 한다.
+    - 이때 **intent** 는 `null`이 허용된다. → 따라서 `?:`를 통해 처리를 해준다.
+    - `MainActivity`가 아니기 때문에 클래스 명 전체를 작성해 주어야 한다.
+    - `setResult` 는 이번 Activity의 **result** 값을 설정하고, 복귀값을 지정하는 것 뿐이다. ▶ 바로 복귀하는 것은 아니다. **resultActivity** 가 닫힐때 복귀
+        - `setResult`의 두번째 인자가 `MainActivity`의 **data** 에 대한 **result** 이다.

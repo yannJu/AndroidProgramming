@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
+
     private fun setUpUI() {
         binding.btnSMS.setOnClickListener {
             val uri = Uri.parse("smsto:01011112222")
