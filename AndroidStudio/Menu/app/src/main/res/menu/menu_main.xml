@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.menu.MainActivity">
+    <item android:title="검색 사이트" >
+        <menu >
+            <item
+                android:id="@+id/action_naver"
+                android:title="action_naver" />
+            <item
+                android:id="@+id/action_google"
+                android:title="action_google" />
+            <item
+                android:id="@+id/action_daum"
+                android:title="action_daum" />
+        </menu>
+    </item>
+    <item android:title="개발자 정보">
+        <menu>
+            <item
+                android:id="@+id/action_call"
+                android:title="action_call" />
+            <item
+                android:id="@+id/action_send_text"
+                android:title="action_send_text" />
+            <item
+                android:id="@+id/action_email"
+                android:title="action_email" />
+        </menu>
+    </item>
+    <item
+        android:icon="@drawable/home"
+        android:id="@+id/action_home"
+        android:title="action_home"
+        app:showAsAction="ifRoom" />
+</menu>
