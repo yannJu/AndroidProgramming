@@ -91,19 +91,29 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, "한번 더 누르면 프로그램이 종료됩니다 . .", Toast.LENGTH_SHORT).show()
 
-            backTimerTask = timer(period=10) {
-                backTime++
-
-                if (backTime > 300) {
+//            backTimerTask = timer(period=10) {
+//                backTime++
+//
+//                if (backTime > 300) {
+//                    isBackBtnClick = 0
+//                    backTime = 0
+//                    return@timer
+//                }
+//            }
+            backTimerTask = timer(period = 3000) {
+                if (isBackBtnClick == 1) {
+                    backTimerTask?.cancel()
                     isBackBtnClick = 0
-                    backTime = 0
+                    return@timer
                 }
             }
         }
         else {
-            if (backTime <= 300) {
-                super.onBackPressed()
-            }
+//            if (backTime <= 300) {
+//                super.onBackPressed()
+//            }
+            backTimerTask?.cancel()
+            super.onBackPressed()
         }
     }
 }
