@@ -52,4 +52,4 @@
 		- 메뉴를 띄우기 위해 다른 프로젝트 생성
 	- ContextMenu 설정
 
-	![]()
+	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a4_img.jpg)
