@@ -39,5 +39,8 @@
 	- 비만도에 적절하게 이미지를 변경하여 출력
 	- 마지막에 작성한 데이터 값 **파일** 에 저장 > shared preference
 6. ### [Timer](./Timer)
-	- 스톱와치 기능 만들기
+	- 스톱워치 기능 만들기
 	- 안드로이드에서의 스레드 기능 이용하기
+
+	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a3_img1.jpg)|![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a3_img2.jpg)
+	--- | --- | 
