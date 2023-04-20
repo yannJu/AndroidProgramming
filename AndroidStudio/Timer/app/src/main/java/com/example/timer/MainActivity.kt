@@ -3,8 +3,10 @@ package com.example.timer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import com.example.timer.databinding.ActivityMainBinding
 import java.util.Timer
+import java.util.TimerTask
 import kotlin.concurrent.timer
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +14,10 @@ class MainActivity : AppCompatActivity() {
     var timerTask: Timer? = null
     var isRunning = false
     var lap = 1
+
+    var isBackBtnClick = 0
+    var backTime = 0
+    var backTimerTask: Timer? = null
 
     val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
 
@@ -77,5 +83,27 @@ class MainActivity : AppCompatActivity() {
         binding.txtMill.text = "00"
 
         binding.layoutLap.removeAllViews()
+    }
+
+    override fun onBackPressed() {
+        if (isBackBtnClick == 0) {
+            isBackBtnClick = 1
+
+            Toast.makeText(this, "한번 더 누르면 프로그램이 종료됩니다 . .", Toast.LENGTH_SHORT).show()
+
+            backTimerTask = timer(period=10) {
+                backTime++
+
+                if (backTime > 300) {
+                    isBackBtnClick = 0
+                    backTime = 0
+                }
+            }
+        }
+        else {
+            if (backTime <= 300) {
+                super.onBackPressed()
+            }
+        }
     }
 }

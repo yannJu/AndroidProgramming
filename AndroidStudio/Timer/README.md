@@ -28,3 +28,8 @@
         - *[AndroidManifest.xml](./app/src/main/AndroidManifest.xml)* 에서 **MainActivity** 에 속성을 추가.
         - `android:screenOrientation="landscape"` 와 같이 작성하면 **가로모드**로 고정된다.
         - 세로모드는 `portrait`
+3. ### [뒤로가기 버튼 이벤트 작용(MainActivity.kt)](./app/src/main/java/com/example/timer/MainActivity.kt)
+    - `onBackPressed` : 뒤로가기 버튼을 눌렀을때 작동하는 이벤트 핸들러
+    - 만약 부모 클래스 호출을 지우면 뒤로가기 버튼을 눌러도 동작하지 않는다.
+        - 상위클래스가 담당하고 있다.
+    - 뒤로가기 버튼이 한번 클릭된 후 3초 이내에 **다시** 클릭 되었을 경우 프로그램 종료 기능 추가
