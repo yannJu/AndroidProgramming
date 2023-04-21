@@ -2,16 +2,20 @@ package com.example.recyclerview
 
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.navigation.ui.AppBarConfiguration
 import android.view.Menu
 import android.view.MenuItem
 import android.view.Surface
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.databinding.ActivityMainBinding
+import com.example.recyclerview.databinding.ItemMainBinding
 import java.util.TimerTask
 import kotlin.concurrent.timer
 
@@ -37,9 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         binding.contentLayout.mainList.apply {
-            adapter = MainAdapter(items) { item, position ->
-                Toast.makeText(application, item.toString(), Toast.LENGTH_LONG).show()
-            }
+            adapter = MainAdapter()
 
             // 가로모드 인 경우
             if (windowManager.defaultDisplay.rotation == Surface.ROTATION_90 || windowManager.defaultDisplay.rotation == Surface.ROTATION_270) {
@@ -58,6 +60,7 @@ class MainActivity : AppCompatActivity() {
                 binding.contentLayout.mainList.adapter?.notifyDataSetChanged()
             }
         }
+
 
 //        val navController = findNavController(R.id.nav_host_fragment_content_main)
 //        appBarConfiguration = AppBarConfiguration(navController.graph)
@@ -91,4 +94,35 @@ class MainActivity : AppCompatActivity() {
 //        return navController.navigateUp(appBarConfiguration)
 //                || super.onSupportNavigateUp()
 //    }
+
+    inner class MainAdapter: RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+        inner class MainViewHolder(itemView: ItemMainBinding) : RecyclerView.ViewHolder(itemView.root) {
+            val txtTitle = itemView.mainTitle
+            val txtContent = itemView.tvMainContent
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.MainViewHolder {
+            val binding = ItemMainBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return MainViewHolder(binding)
+        }
+
+        override fun getItemCount(): Int = items.size
+
+        override fun onBindViewHolder(holder: MainAdapter.MainViewHolder, position: Int) {
+            items[position].let { item ->
+                holder.apply {
+                    txtTitle.text = item.title
+                    txtContent.text = item.content
+                }
+
+                holder.itemView.setOnClickListener {
+                    onItemClick(item, position)
+                }
+            }
+        }
+    }
+
+    fun onItemClick(item: MainData, position: Int) {
+        Toast.makeText(application, "Item : <${item.toString()}>, Position : <$position>", Toast.LENGTH_SHORT).show()
+    }
 }

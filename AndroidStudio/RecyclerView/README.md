@@ -50,4 +50,8 @@
     - `binding.contentLayout.mainList.adapter?.notifyDataSetChanged()` 를 이용하여 **변화** 를 체크
         - 이 때 View를 만든 `original thread` 만이 UI를 건들 수 있다.
         - 따라서 UI 가 작업을 할 수 있도록 `runOnUiThread` 내에서 진행
-    -
+8. ### [Main Adapter 재사용(MainActivity.kt)](./app/src/main/java/com/example/recyclerview/MainActivity.kt)
+    - `MainAdapter` 를 다른 앱에서 형태 그대로 쓸 수 없다. ▶ `MainData` 과 현재 앱의 **레이아웃** 에 의존하고 있기 때문에
+    - 다른 앱에서도 재사용하기 위해서는 **Main Activity** 의 `내부 클래스` 로 정의해서 쓴다.
+        - 매개변수 전달할 필요가 없다.
+        - 클래스에서 정의한 **변수**, **함수** 를 자유롭게 쓸 수 있다.
