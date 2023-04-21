@@ -24,6 +24,7 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.example.gallery.databinding.ActivityMainBinding
 import kotlin.concurrent.timer
+import java.util.TimerTask
 
 class MainActivity : AppCompatActivity() {
 
@@ -126,15 +127,15 @@ class MainActivity : AppCompatActivity() {
         binding.contentLayout.viewPager.adapter = adapter
         autoSlide(binding.contentLayout.viewPager, adapter)
     }
-}
 
-fun autoSlide(viewPager: ViewPager2, adapter: PageAdapter) {
-    timer(period = 3000) {
-        runOnUiThread {
-            if (viewPager.currentItem < adapter.itemCount - 1) {
-                viewPager.currentItem = viewPager.currentItem + 1
+    fun autoSlide(viewPager: ViewPager2, adapter: PageAdapter) {
+        timer(period = 3000) {
+            runOnUiThread {
+                if (viewPager.currentItem < adapter.itemCount - 1) {
+                    viewPager.currentItem = viewPager.currentItem + 1
+                } else viewPager.currentItem = 0
             }
-            else viewPager.currentItem = 0
         }
     }
+
 }
