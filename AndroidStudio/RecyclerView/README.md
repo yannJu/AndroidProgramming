@@ -33,3 +33,21 @@
     - 위와 같이 정의해 둔 `items` 를 `MainActivity` 에서 정의하고 `Adapter` 의 인자로 넘겨준다.
 5. ### [가로모드/세로모드 여부 확인]
     - `windowManager.defaultDisplay.rotation == Surface.ROTATION_90` 와 같이 **0, 90, 180, 270** 을 설정하여 가로/세로모드 구분을 할 수 있다.
+
+        ![]()
+6. ### [상세보기 기능 추가하기(MainAdapter.kt)](./app/src/main/java/com/example/recyclerview/MainAdapter.kt)
+    - `MainAdapter` 에서 이벤트 핸들러를 동작시킨다.
+    - `onBindViewHolder` 에서 기능을 할당해준다.
+        - 각 `Holder`의 `ItemView.root` > **CardView** 를 의미
+        - 따라서 **CardView** 가 클릭되면 동작되도록 한다. ▶ `setOnClickListener`
+    - `MainAdapter` 의 매개변수로 `setOnClickListener`에 반응하는 함수를 넘겨준다.
+        - 함수명 : (매개변수) -> [리턴값] 형태로 넘겨준다.
+        - 리턴값이 없는경우 `Unit` 작성
+    - **Card** 클릭 시 `Toast` 를 띄우도록 설정
+7. ### [3초 간격으로 데이터 10개씩 추가하기(MainActivity.kt)](./app/src/main/java/com/example/recyclerview/MainActivity.kt)
+    - `timer` 를 이용하여 `items` 에 데이터 추가 > 하지만 **화면** 에는 뜨지 않는다 . .!
+        - 최초의 데이터만 화면에 나타나기 때문에 . .
+    - `binding.contentLayout.mainList.adapter?.notifyDataSetChanged()` 를 이용하여 **변화** 를 체크
+        - 이 때 View를 만든 `original thread` 만이 UI를 건들 수 있다.
+        - 따라서 UI 가 작업을 할 수 있도록 `runOnUiThread` 내에서 진행
+    -

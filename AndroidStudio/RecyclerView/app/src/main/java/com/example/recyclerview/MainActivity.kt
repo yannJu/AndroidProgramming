@@ -1,29 +1,29 @@
 package com.example.recyclerview
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import android.view.Surface
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerview.databinding.ActivityMainBinding
-import com.example.recyclerview.databinding.ContentLayoutBinding
+import java.util.TimerTask
+import kotlin.concurrent.timer
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+
     var items: MutableList<MainData> = mutableListOf()
     init {
-        (1..200).forEach {
+        (1..10).forEach {
             items += MainData("Title_$it", "Content_$it")
         }
     }
@@ -37,13 +37,26 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         binding.contentLayout.mainList.apply {
-            adapter = MainAdapter(items)
+            adapter = MainAdapter(items) { item, position ->
+                Toast.makeText(application, item.toString(), Toast.LENGTH_LONG).show()
+            }
 
             // 가로모드 인 경우
             if (windowManager.defaultDisplay.rotation == Surface.ROTATION_90 || windowManager.defaultDisplay.rotation == Surface.ROTATION_270) {
                 layoutManager = GridLayoutManager(this@MainActivity, 3)
             } // 세로모드 인 경우
             else layoutManager = LinearLayoutManager(this@MainActivity)
+        }
+
+        // 3초 간격으로 10개씩 데이터 추가
+        timer(period = 5000) {
+            (1..10).forEach {
+                items += MainData("Title_${items.size + it}", "Content_${items.size + it}")
+            }
+
+            runOnUiThread {
+                binding.contentLayout.mainList.adapter?.notifyDataSetChanged()
+            }
         }
 
 //        val navController = findNavController(R.id.nav_host_fragment_content_main)

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.databinding.ItemMainBinding
 
-class MainAdapter (val items: MutableList<MainData>): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+class MainAdapter(val items: MutableList<MainData>, val onItemClick: (MainData, Int) -> Unit): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     inner class MainViewHolder(itemView: ItemMainBinding) : RecyclerView.ViewHolder(itemView.root) {
         val txtTitle = itemView.mainTitle
         val txtContent = itemView.tvMainContent
@@ -24,6 +24,10 @@ class MainAdapter (val items: MutableList<MainData>): RecyclerView.Adapter<MainA
             holder.apply {
                 txtTitle.text = item.title
                 txtContent.text = item.content
+            }
+
+            holder.itemView.setOnClickListener {
+                onItemClick(item, position)
             }
         }
     }
