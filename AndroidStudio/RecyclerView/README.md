@@ -20,4 +20,16 @@
         - 바로 **parent** 에 넣어줄 건지에 대한 여부로 true/false 설정
 3. ### [Adapter와 Recycler View 연결]()
     - 데이터를 어떤식으로 보여줄지에 대한 Layout Manager 설정
-        - ``
+    - `MainAdapter` 를 바인딩하여 할당
+4. ### [데이터를 어댑터에서 분리(MainActivity.kt)](./app/src/main/java/com/example/recyclerview/MainActivity.kt)
+
+        ```
+         var items: MutableList<MainData> = mutableListOf(
+                MainData("Title1", "Content1"),
+                MainData("Title2", "Content2"),
+                MainData("Title3", "Content3")
+            )
+        ```
+    - 위와 같이 정의해 둔 `items` 를 `MainActivity` 에서 정의하고 `Adapter` 의 인자로 넘겨준다.
+5. ### [가로모드/세로모드 여부 확인]
+    - `windowManager.defaultDisplay.rotation == Surface.ROTATION_90` 와 같이 **0, 90, 180, 270** 을 설정하여 가로/세로모드 구분을 할 수 있다.

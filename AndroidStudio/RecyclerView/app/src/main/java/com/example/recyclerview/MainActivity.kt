@@ -10,6 +10,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.Surface
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerview.databinding.ActivityMainBinding
 import com.example.recyclerview.databinding.ContentLayoutBinding
@@ -18,7 +20,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    val contentBinding by lazy {ContentLayoutBinding.inflate(layoutInflater)}
+
+    var items: MutableList<MainData> = mutableListOf()
+    init {
+        (1..200).forEach {
+            items += MainData("Title_$it", "Content_$it")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -28,10 +36,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        binding.contentLayout.mainList.apply {
+            adapter = MainAdapter(items)
 
-        contentBinding.mainList.apply {
-            adapter = MainAdapter()
-            layoutManager = LinearLayoutManager(this@MainActivity)
+            // 가로모드 인 경우
+            if (windowManager.defaultDisplay.rotation == Surface.ROTATION_90 || windowManager.defaultDisplay.rotation == Surface.ROTATION_270) {
+                layoutManager = GridLayoutManager(this@MainActivity, 3)
+            } // 세로모드 인 경우
+            else layoutManager = LinearLayoutManager(this@MainActivity)
         }
 
 //        val navController = findNavController(R.id.nav_host_fragment_content_main)

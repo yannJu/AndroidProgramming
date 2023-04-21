@@ -1,21 +1,16 @@
 package com.example.recyclerview
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.databinding.ItemMainBinding
 
-class MainAdapter : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
+class MainAdapter (val items: MutableList<MainData>): RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
     inner class MainViewHolder(itemView: ItemMainBinding) : RecyclerView.ViewHolder(itemView.root) {
         val txtTitle = itemView.mainTitle
         val txtContent = itemView.tvMainContent
     }
-
-    var items: MutableList<MainData> = mutableListOf(
-        MainData("Title1", "Content1"),
-        MainData("Title2", "Content2"),
-        MainData("Title3", "Content3")
-    )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainAdapter.MainViewHolder {
         val binding = ItemMainBinding.inflate(LayoutInflater.from(parent.context), parent, false)
