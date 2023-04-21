@@ -53,3 +53,16 @@
 	- ContextMenu 설정
 
 	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a4_img.jpg)
+9. ### [RecyclerView](./RecyclerView)
+	- 상세보기가 가능한 `CardView` 생성
+	- 동적으로 `Data` 추가
+	- 가로/세로 모드 여부에 따라 다른 **레이아웃** 적용
+10. ### [Gallery](./Gallery)
+	- **전자액자**  만들기
+	-  `데이터` 권한 주기 > **query** 만들기
+	- `Fragment` 사용
+		- 프래그먼트 생명 주기
+	- 좌우 슬라이드 가능한 뷰 만들기
+	- 사용하고있는 디바이스의 갤러리 이미지 출력 > **갤러리 어플** 구현
+
+	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a5_img%20(2).jpg)

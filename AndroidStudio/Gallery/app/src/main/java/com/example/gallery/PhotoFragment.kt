@@ -1,15 +1,22 @@
 package com.example.gallery
 
+import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import coil.load
+import com.example.gallery.databinding.FragmentPhotoBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+// key 로 사용할 상수
+private const val ARG_URI = "URI"
+var _binding:FragmentPhotoBinding? = null
+val binding get() = _binding!!
 
 /**
  * A simple [Fragment] subclass.
@@ -18,14 +25,12 @@ private const val ARG_PARAM2 = "param2"
  */
 class PhotoFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var uri: Uri
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            uri = it.getParcelable<Uri>(ARG_URI)!!
         }
     }
 
@@ -33,8 +38,28 @@ class PhotoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding = FragmentPhotoBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_photo, container, false)
+//        return inflater.inflate(R.layout.fragment_photo, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // view : 레이아웃의 루트 요소 참조(ConstraintLayout)
+
+        val imgView = view.findViewById<ImageView>(R.id.imageView)
+        val descriptor = requireContext().contentResolver.openFileDescriptor(uri, "r")
+
+        descriptor?.use {
+            val bitmap = BitmapFactory.decodeFileDescriptor(descriptor.fileDescriptor)
+            imgView.load(bitmap)
+        }
     }
 
     companion object {
@@ -48,11 +73,10 @@ class PhotoFragment : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(uri: Uri) =
             PhotoFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putParcelable(ARG_URI, uri)
                 }
             }
     }

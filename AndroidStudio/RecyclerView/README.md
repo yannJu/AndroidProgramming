@@ -34,7 +34,7 @@
 5. ### [가로모드/세로모드 여부 확인]
     - `windowManager.defaultDisplay.rotation == Surface.ROTATION_90` 와 같이 **0, 90, 180, 270** 을 설정하여 가로/세로모드 구분을 할 수 있다.
 
-        ![]()
+        ![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a5_img%20(1).jpg)
 6. ### [상세보기 기능 추가하기(MainAdapter.kt)](./app/src/main/java/com/example/recyclerview/MainAdapter.kt)
     - `MainAdapter` 에서 이벤트 핸들러를 동작시킨다.
     - `onBindViewHolder` 에서 기능을 할당해준다.
