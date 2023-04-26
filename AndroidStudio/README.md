@@ -77,4 +77,9 @@
 	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a6_img%20(1).jpg) | ![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a6_img%20(2).jpg)
 	---| ---|
 12. ### [ImageSearch(_Retrofit)](./ImageSearch)
-	- 
+	- 카카오톡 API 를 이용하여 이미지 검색하기
+	- `RecyclerView` 를 통해 검색한 이미지 가져오기
+	- `Json` 을 변환하여 객체로 사용
+
+	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a7_img%20(1).jpg) | ![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a7_img%20(2).jpg)
+	---| ---|

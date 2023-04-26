@@ -24,7 +24,7 @@
     - 그 외의 키들은 필요시 사용
     - `Authorization` 에 이전에 받은 API 키를 이용하면 된다.
 
-    ![kakao Api]()
+    ![kakao Api](https://github.com/yannJu/AndroidProgramming/blob/master/img/a4_img.PNG)
     - `Kakao` 에서 응답받은 결과는 **Json** 문자열로 들어온다.
     - `Python`, `JS` 의 경우는 **사전** 으로 가능하지만 `Kotlin` 의 경우는 **객체(Data)** 타입을 정의해야한다. .
     - **Json** 을 `deserialize` 하는 역할이 필요하다. → `gson` : retrofit 시 같이 **implementation**
@@ -34,7 +34,7 @@
     - *[data](./app/src/main/java/com/example/imagesearch/data)* : 데이터를 보관할 **Package**
         - new > Kotlin data class file from Json
 
-            ![img2]()
+            ![img2](https://github.com/yannJu/AndroidProgramming/blob/master/img/a4_img2.PNG)
         - meta, document(List<document>) 객체 타입이 있음을 알 수 있다!
         - advance > gson 으로 설정
         - *[Document](./app/src/main/java/com/example/imagesearch/data/Document)*, *[Images](./app/src/main/java/com/example/imagesearch/data/Images)*, *[Meta](./app/src/main/java/com/example/imagesearch/data/Meta)* 생성된다 : `Images` 가 최상위
