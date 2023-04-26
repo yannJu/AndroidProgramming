@@ -66,3 +66,13 @@
 	- 사용하고있는 디바이스의 갤러리 이미지 출력 > **갤러리 어플** 구현
 
 	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a5_img%20(2).jpg)
+11. ### [Gallery2](./Gallery2)
+	- **9**, **10** 에서 했던 내용을 바탕으로 구현
+		- `RecyclerView` 와 `Fragment`, `미디어 접근` 활용
+		- 각각의 `Adapter` 구현
+	- `Main` 에 두개의 **Fragment** 를 연결
+		- 이 때 `Photo List Fragment` 는 **RecyclerView** 추가
+	- `PhotoView` 를 통해 **확대/축소** 기능
+
+	![]()
+12. ### []()
