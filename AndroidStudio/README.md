@@ -74,5 +74,5 @@
 		- 이 때 `Photo List Fragment` 는 **RecyclerView** 추가
 	- `PhotoView` 를 통해 **확대/축소** 기능
 
-	![]() | ![]()
+	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a6_img%20(1).jpg) | ![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a6_img%20(2).jpg)
 	---| ---|
