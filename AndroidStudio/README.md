@@ -88,5 +88,5 @@
 	- DB에 올라와 있는 각 영상들 접근
 	- 실시간 스트리밍 접근
 
-	![]() | ![]()
+	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a8_img%20(1).jpg) | ![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a8_img%20(2).jpg)
 	---| ---|
