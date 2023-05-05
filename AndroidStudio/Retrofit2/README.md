@@ -2,8 +2,6 @@
 
 1. ### Drawer 사용
     - 앱을 실행시키면 아래와 같이 **Drawer** 들이 있다.
-
-        ![img1]()
     - 각각 아이템을 클릭할 때 마다 `Fragment` 교체
     - *[mobile_navigation.xml](./app/src/main/res/navigation/mobile_navigation.xml)* 에 각각의 `Fragment` 를 확인할 수 있다.
         - **Drawer** 에 의해 독립적으로 실행되므로 각 `Fragment` 의 연관성은 없다.
@@ -78,8 +76,6 @@
     - `api` 호출시 성공 / 실패 골격을 필수적으로 작성
         - 성공 시 어떻게 **body** 를 출력할 것인가 ?
         - `SecFileList` 에 전부 추가해 준다. .
-
-    ![img2]()
 8. ### URL 클릭 후 링크 연결하기
     - 새로운 `Fragment` 를 추가하여 연결된 **url** 로 이동
         - *[VideoFragment.kt](./app/src/main/java/com/example/retrofit2/ui/securitycam/VideoFragment.kt)*

@@ -83,3 +83,10 @@
 
 	![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a7_img%20(1).jpg) | ![](https://github.com/yannJu/AndroidProgramming/blob/master/img/a7_img%20(2).jpg)
 	---| ---|
+13. ### [보안카메라 목록 접근](./Retrofit2)
+	- 이전에 생성한 **보안카메라** 애플리케이션 URL 에 접근
+	- DB에 올라와 있는 각 영상들 접근
+	- 실시간 스트리밍 접근
+
+	![]() | ![]()
+	---| ---|
