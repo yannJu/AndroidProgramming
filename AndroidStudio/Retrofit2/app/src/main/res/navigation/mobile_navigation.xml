@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.retrofit2.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/security_cam"
+        android:name="com.example.retrofit2.ui.securitycam.SecurityCam"
+        android:label="보안 녹화 파일"
+        tools:layout="@layout/fragment_security_cam" >
+        <action
+            android:id="@+id/action_security_cam_to_nav_video"
+            app:destination="@id/nav_video" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_video"
+        android:name="com.example.retrofit2.ui.securitycam.VideoFragment"
+        android:label="비디오 보기"
+        tools:layout="@layout/fragment_video" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.retrofit2.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_stream"
+        android:name="com.example.retrofit2.ui.stream.StreamFragment"
+        android:label="실시간 스트리밍"
+        tools:layout="@layout/fragment_stream" />
+</navigation>
